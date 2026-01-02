@@ -125,6 +125,7 @@ export const CHAIN_SELECT_MAINNETS = [
   ChainId.ExosamaNetwork,
   ChainId.OctaSpace,
   ChainId.BasedAI,
+  42793, // Etherlink Mainnet
 ] as const;
 
 export const CHAIN_SELECT_TESTNETS = [
@@ -145,6 +146,8 @@ export const CHAIN_SELECT_TESTNETS = [
   ChainId.PlumeTestnet,
   ChainId.BeamTestnet,
   ChainId.ZenChainTestnet,
+  128123, // Etherlink Ghostnet
+  127823, // Etherlink Shadownet
 ] as const;
 
 export const ORDERED_CHAINS = [...CHAIN_SELECT_MAINNETS, ...CHAIN_SELECT_TESTNETS] as const;
@@ -2315,6 +2318,63 @@ export const CHAINS = {
     //   apiKey: RESERVOIR_API_KEY,
     //   apiUrl: 'https://api-zora.reservoir.tools',
     // }),
+  }),
+
+  // ==========================================================================
+  // ETHERLINK CHAINS (Added by setup script)
+  // ==========================================================================
+  
+  // Etherlink Mainnet
+  [42793]: new Chain({
+    type: SupportType.ETHERSCAN_COMPATIBLE,
+    chainId: 42793,
+    name: 'Etherlink',
+    nativeToken: 'XTZ',
+    nativeTokenCoingeckoId: 'tezos',
+    logoUrl: '/assets/images/vendor/chains/etherlink.svg',
+    infoUrl: 'https://etherlink.com',
+    explorerUrl: 'https://explorer.etherlink.com',
+    etherscanCompatibleApiUrl: 'https://explorer.etherlink.com/api',
+    rpc: {
+      main: 'https://rpc.bubbletez.com',
+      free: 'https://node.mainnet.etherlink.com',
+    },
+    deployedContracts: { ...MULTICALL },
+    priceStrategy: undefined,
+  }),
+  // Etherlink Ghostnet Testnet
+  [128123]: new Chain({
+    type: SupportType.ETHERSCAN_COMPATIBLE,
+    chainId: 128123,
+    name: 'Etherlink Ghostnet',
+    nativeToken: 'XTZ',
+    logoUrl: '/assets/images/vendor/chains/etherlink.svg',
+    infoUrl: 'https://etherlink.com',
+    explorerUrl: 'https://testnet.explorer.etherlink.com',
+    etherscanCompatibleApiUrl: 'https://testnet.explorer.etherlink.com/api',
+    rpc: {
+      main: 'https://node.ghostnet.etherlink.com',
+    },
+    deployedContracts: { ...MULTICALL },
+    isTestnet: true,
+    correspondingMainnetChainId: 42793,
+  }),
+  // Etherlink Shadownet Testnet
+  [127823]: new Chain({
+    type: SupportType.ETHERSCAN_COMPATIBLE,
+    chainId: 127823,
+    name: 'Etherlink Shadownet',
+    nativeToken: 'XTZ',
+    logoUrl: '/assets/images/vendor/chains/etherlink.svg',
+    infoUrl: 'https://etherlink.com',
+    explorerUrl: 'https://shadownet.explorer.etherlink.com',
+    etherscanCompatibleApiUrl: 'https://shadownet.explorer.etherlink.com/api',
+    rpc: {
+      main: 'https://node.shadownet.etherlink.com',
+    },
+    deployedContracts: { ...MULTICALL },
+    isTestnet: true,
+    correspondingMainnetChainId: 42793,
   }),
 } as const;
 

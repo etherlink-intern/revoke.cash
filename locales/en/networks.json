@@ -114,7 +114,10 @@
     "zetachain": "ZetaChain is a Layer 1 blockchain with a consensus mechanism based on Proof of Stake that is currently in development. It aims to provide infrastructure for developers to build cross-chain applications connecting to other EVM chains and non-EVM chains alike.",
     "zircuit": "Zircuit is a Layer 2 scaling solution for Ethereum that is built on zk rollup technology. To focus on security, Zircuit uses AI to monitor the network's mempool for malicious transactions and blocks them before they are included in the chain.",
     "zksync-era": "zkSync Era is a Layer 2 scaling solution and one of the first projects to use the novel zkEVM technology. This technology offers very low fees while maintaining strong security guarantees through the use of zero-knowledge proofs. zkSync previously created zkSync Lite, which was an early version of zkRollup technology that was not yet EVM compatible. zkSync Era is the next iteration, adding full EVM support.",
-    "zora": "Zora Network is a Layer 2 scaling solution for Ethereum. It is built on Optimism's Open Source OP Stack, so just like Optimism it uses optimistic rollup technology. Since Zora Network is developed by the Zora NFT exchange its main use case lies in minting and trading NFTs."
+    "zora": "Zora Network is a Layer 2 scaling solution for Ethereum. It is built on Optimism's Open Source OP Stack, so just like Optimism it uses optimistic rollup technology. Since Zora Network is developed by the Zora NFT exchange its main use case lies in minting and trading NFTs.",
+    "etherlink": "Etherlink is an EVM-compatible Layer 2 rollup built on the Tezos blockchain. It combines the security of Tezos with full Ethereum compatibility, featuring low fees, fast finality, and uses XTZ as its native token.",
+    "etherlink-ghostnet": "Etherlink Ghostnet is a legacy testnet for Etherlink, connected to Tezos Ghostnet for developer testing.",
+    "etherlink-shadownet": "Etherlink Shadownet is the primary testnet for Etherlink, offering the latest features for pre-mainnet testing."
   },
   "title": "What Is {chainName}?"
 }
