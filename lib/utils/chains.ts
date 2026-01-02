@@ -2336,8 +2336,8 @@ export const CHAINS = {
     explorerUrl: 'https://explorer.etherlink.com',
     etherscanCompatibleApiUrl: 'https://explorer.etherlink.com/api',
     rpc: {
-      main: 'https://node.mainnet.etherlink.com',
-      free: 'https://rpc.bubbletez.com',
+      main: 'https://rpc.bubbletez.com',
+      free: 'https://node.mainnet.etherlink.com',
     },
     deployedContracts: { ...MULTICALL },
     priceStrategy: undefined,
