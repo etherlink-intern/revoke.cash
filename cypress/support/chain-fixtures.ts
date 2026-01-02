@@ -117,6 +117,8 @@ export const TEST_ADDRESSES: Record<SupportedChainId, Address> = {
   [ChainId.ZircuitMainnet]: '0x0E276aB356FC73093Ba530dFFa3445786cD859f8',
   [ChainId.ZkSyncMainnet]: '0x82FdF36736f3f8eE6f04Ab96eA32213c8d826FaA',
   [ChainId.Zora]: '0x061EFb2DF7767D6e63529BA99394037d4dCa39D6',
+  // Etherlink
+  42793: '0x0000000000000000000000000000000000000000', // Etherlink Mainnet (placeholder)
   // Testnets
   [ChainId.AbstractSepoliaTestnet]: '0xe126b3E5d052f1F575828f61fEBA4f4f2603652a',
   [ChainId.Amoy]: '0x57BD9b2E821d2bF1f8136026ba3A29848eff9e47',
@@ -135,4 +137,7 @@ export const TEST_ADDRESSES: Record<SupportedChainId, Address> = {
   [ChainId.ZetaChainTestnet]: '0x9500c80384DCAd166b1DC345eBa0B53dC21F5131',
   [ChainId.ZkSyncSepoliaTestnet]: '0x46D8e47b9A6487FDAB0a700b269A452cFeED49Aa',
   [ChainId.ZenChainTestnet]: '0xb98B6373f7f59bdc0bB2DCd11a9fC1e0a43AfBfa',
+  // Etherlink Testnets
+  128123: '0x0000000000000000000000000000000000000000', // Etherlink Ghostnet (placeholder)
+  127823: '0x0000000000000000000000000000000000000000', // Etherlink Shadownet (placeholder)
 } as const;

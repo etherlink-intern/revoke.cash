@@ -4,19 +4,25 @@
 FROM node:20-alpine AS deps
 RUN apk add --no-cache libc6-compat
 WORKDIR /app
-COPY package.json yarn.lock* ./
-RUN yarn install --frozen-lockfile --network-timeout 100000
+COPY package.json yarn.lock .yarnrc.yml ./
+COPY .yarn ./.yarn
+RUN corepack enable && yarn install --network-timeout 100000
 
 FROM node:20-alpine AS builder
 WORKDIR /app
-COPY --from=deps /app/node_modules ./node_modules
+COPY --from=deps /app/.yarn ./.yarn
+COPY --from=deps /app/.yarnrc.yml ./
+COPY --from=deps /app/package.json ./
+COPY --from=deps /app/yarn.lock ./
 COPY . .
+RUN corepack enable
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV NODE_ENV=production
 ARG NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID
-ARG NEXT_PUBLIC_NODE_URLS='{"42793":"https://rpc.bubbletez.com"}'
+ARG NEXT_PUBLIC_NODE_URLS='{\"42793\":\"https://rpc.bubbletez.com\"}'
 ENV NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID=$NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID
 ENV NEXT_PUBLIC_NODE_URLS=$NEXT_PUBLIC_NODE_URLS
+RUN yarn install --immutable
 RUN yarn build
 
 FROM node:20-alpine AS runner

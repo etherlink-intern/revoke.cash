@@ -2323,7 +2323,7 @@ export const CHAINS = {
   // ==========================================================================
   // ETHERLINK CHAINS (Added by setup script)
   // ==========================================================================
-  
+
   // Etherlink Mainnet
   [42793]: new Chain({
     type: SupportType.ETHERSCAN_COMPATIBLE,
@@ -2336,8 +2336,8 @@ export const CHAINS = {
     explorerUrl: 'https://explorer.etherlink.com',
     etherscanCompatibleApiUrl: 'https://explorer.etherlink.com/api',
     rpc: {
-      main: 'https://rpc.bubbletez.com',
-      free: 'https://node.mainnet.etherlink.com',
+      main: 'https://node.mainnet.etherlink.com',
+      free: 'https://rpc.bubbletez.com',
     },
     deployedContracts: { ...MULTICALL },
     priceStrategy: undefined,
