@@ -122,6 +122,10 @@ export const isTestnet = (chainId: DocumentedChainId): boolean => {
   return CHAINS[chainId].isTestnet();
 };
 
+export const isTestnetChain = (chainId: DocumentedChainId): boolean => {
+  return getChainConfig(chainId).isTestnet();
+};
+
 export const getChainConfig = (chainId: DocumentedChainId): Chain => {
   return CHAINS[chainId];
 };
