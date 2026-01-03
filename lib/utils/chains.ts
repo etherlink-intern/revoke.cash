@@ -2325,7 +2325,7 @@ export const CHAINS = {
   // ==========================================================================
 
   // Etherlink Mainnet
-  [42793]: new Chain({
+  '42793': new Chain({
     type: SupportType.ETHERSCAN_COMPATIBLE,
     chainId: 42793,
     name: 'Etherlink',
@@ -2343,7 +2343,7 @@ export const CHAINS = {
     priceStrategy: undefined,
   }),
   // Etherlink Ghostnet Testnet
-  [128123]: new Chain({
+  '128123': new Chain({
     type: SupportType.ETHERSCAN_COMPATIBLE,
     chainId: 128123,
     name: 'Etherlink Ghostnet',
@@ -2360,7 +2360,7 @@ export const CHAINS = {
     correspondingMainnetChainId: 42793,
   }),
   // Etherlink Shadownet Testnet
-  [127823]: new Chain({
+  '127823': new Chain({
     type: SupportType.ETHERSCAN_COMPATIBLE,
     chainId: 127823,
     name: 'Etherlink Shadownet',
