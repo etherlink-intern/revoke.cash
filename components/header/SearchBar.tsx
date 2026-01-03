@@ -7,14 +7,22 @@ import { useTranslations } from 'next-intl';
 import { useCallback, useRef, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { useAccount } from 'wagmi';
+import { useSearchParams } from 'next/navigation';
+
+// Default to Etherlink Mainnet
+const DEFAULT_CHAIN_ID = 42793;
 
 const SearchBar = () => {
   const t = useTranslations();
   const router = useCsrRouter();
+  const searchParams = useSearchParams();
   const [value, setValue] = useState<string>('');
   const [isFocused, setIsFocused] = useState<boolean>(false);
   const { address } = useAccount();
   const timerRef = useRef<NodeJS.Timeout | undefined>(undefined);
+
+  // Get the current chainId or default to Etherlink
+  const chainId = searchParams?.get('chainId') ?? DEFAULT_CHAIN_ID;
 
   const onFocus = useCallback(() => {
     clearTimeout(timerRef.current);
@@ -28,15 +36,15 @@ const SearchBar = () => {
   const onClick = useCallback(() => {
     if (address) {
       setValue(address);
-      router.push(`/address/${address}`, { retainSearchParams: ['chainId'] });
+      router.push(`/address/${address}?chainId=${chainId}`);
     }
-  }, [address, router]);
+  }, [address, router, chainId]);
 
   return (
     <div className="relative w-full">
       <AddressSearchBox
         id="global-search"
-        onSubmit={() => router.push(`/address/${value}`, { retainSearchParams: ['chainId'] })}
+        onSubmit={() => router.push(`/address/${value}?chainId=${chainId}`)}
         onChange={(ev) => setValue(ev.target.value.trim())}
         value={value}
         placeholder={t('common.nav.search')}
