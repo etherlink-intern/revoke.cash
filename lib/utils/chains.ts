@@ -2196,7 +2196,6 @@ export const CHAINS = {
   // ==========================================================================
 
   // Etherlink Mainnet
-  // biome-ignore lint/complexity/useLiteralKeys: Numeric keys required for type inference
   42793: new Chain({
     type: SupportType.ETHERSCAN_COMPATIBLE,
     chainId: 42793,
