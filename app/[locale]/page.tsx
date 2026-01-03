@@ -29,7 +29,7 @@ export const generateMetadata = async ({ params }: Props): Promise<Metadata> => 
 
   return {
     title: t('common.meta.title'),
-    description: t('common.meta.description', { chainName: 'Ethereum' }),
+    description: t('common.meta.description', { chainName: 'Etherlink' }),
   };
 };
 

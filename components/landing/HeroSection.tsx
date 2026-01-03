@@ -11,7 +11,7 @@ const HeroSection = () => {
     <LandingSection title={t('landing.hero_section.title')} size="h1">
       <LandingParagraph>{t('landing.hero_section.paragraph_1')}</LandingParagraph>
       <DemoVideo />
-      <Button href="/token-approval-checker/ethereum" style="primary" size="lg" className="mx-auto" router>
+      <Button href="/token-approval-checker/etherlink" style="primary" size="lg" className="mx-auto" router>
         {t('common.buttons.get_started')}
       </Button>
     </LandingSection>
