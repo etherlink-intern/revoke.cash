@@ -146,6 +146,9 @@ export const throwIfExcessiveGas = (chainId: number, address: Address, estimated
     5031: 10n, // Somnia
     [ChainId.ZkSyncSepoliaTestnet]: 20n,
     [ChainId.ZERONetwork]: 20n,
+    42793: 3n,   // Etherlink Mainnet (limit: 1.5M gas)
+    128123: 3n,  // Etherlink Ghostnet
+    127823: 3n,  // Etherlink Shadownet
   };
 
   const EXCESSIVE_GAS = 500_000n * (gasFactors[chainId] ?? 1n);
@@ -198,12 +201,12 @@ export const splitBlockRangeInChunks = (chunks: [number, number][], chunkSize: n
     to - from < chunkSize
       ? [[from, to]]
       : splitBlockRangeInChunks(
-          [
-            [from, from + chunkSize - 1],
-            [from + chunkSize, to],
-          ],
-          chunkSize,
-        ),
+        [
+          [from, from + chunkSize - 1],
+          [from + chunkSize, to],
+        ],
+        chunkSize,
+      ),
   );
 
 // Normalise risk factors to match the format of other risk data sources (TODO: Remove once this is live and whois sources are updated)
