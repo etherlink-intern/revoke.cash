@@ -118,8 +118,6 @@ export const TEST_ADDRESSES: Record<SupportedChainId, Address> = {
   [ChainId.ZircuitMainnet]: '0x0E276aB356FC73093Ba530dFFa3445786cD859f8',
   [ChainId.ZkSyncMainnet]: '0x82FdF36736f3f8eE6f04Ab96eA32213c8d826FaA',
   [ChainId.Zora]: '0x061EFb2DF7767D6e63529BA99394037d4dCa39D6',
-  // Etherlink
-  42793: '0x0000000000000000000000000000000000000000', // Etherlink Mainnet (placeholder)
   // Testnets
   [ChainId.AbstractSepoliaTestnet]: '0xe126b3E5d052f1F575828f61fEBA4f4f2603652a',
   [ChainId.Amoy]: '0x57BD9b2E821d2bF1f8136026ba3A29848eff9e47',
