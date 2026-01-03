@@ -35,4 +35,6 @@ export const RESERVOIR_API_KEY = process.env.RESERVOIR_API_KEY ?? process.env.NE
 export const FAIRSIDE_API_KEY = process.env.FAIRSIDE_API_KEY ?? process.env.NEXT_PUBLIC_FAIRSIDE_API_KEY;
 
 export const COINGECKO_API_KEY = process.env.COINGECKO_API_KEY ?? process.env.NEXT_PUBLIC_COINGECKO_API_KEY;
-export const COINGECKO_API_BASE_URL = 'https://pro-api.coingecko.com/api/v3';
+export const COINGECKO_API_BASE_URL = COINGECKO_API_KEY
+  ? 'https://pro-api.coingecko.com/api/v3'
+  : 'https://api.coingecko.com/api/v3';

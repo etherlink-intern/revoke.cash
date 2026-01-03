@@ -61,9 +61,11 @@ export class EtherscanEventGetter implements EventGetter {
       queue.add(() => ky.get(apiUrl, { searchParams, retry: 3, timeout: false }).json<LatestBlockResponse>()),
     );
 
-    const blockNumber = Number(result.result);
+    const blockNumberValue = typeof result.result === 'object' ? (result.result as any).blockNumber : result.result;
+    const blockNumber = Number(blockNumberValue);
     if (!blockNumber) {
       console.log(`${apiUrl}?${new URLSearchParams(searchParams).toString()}`);
+      console.log('Result:', result);
       throw new Error('Failed to get latest block number');
     }
     return blockNumber;
@@ -146,7 +148,7 @@ const prepareGetLatestBlockQuery = (chainId: number, apiKey?: string) => {
     action: 'getblocknobytime',
     timestamp: String(timestamp),
     closest: 'before',
-    apiKey,
+    apikey: apiKey,
   };
 
   // Remove 'undefined' values from the query
@@ -177,7 +179,7 @@ const prepareGetLogsQuery = (chainId: number, filter: Filter, apiKey?: string) =
     topic2_3_opr: topic2 && topic3 ? 'and' : undefined,
     offset: String(1000),
     page: String(1),
-    apiKey,
+    apikey: apiKey,
   };
 
   // Remove 'undefined' values from the query
