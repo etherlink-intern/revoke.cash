@@ -12,14 +12,14 @@ import { Chain, type DeployedContracts, SupportType } from '../chains/Chain';
 // Make sure to update these lists when updating the above lists
 // Order is loosely based on TVL (as per DeFiLlama)
 
-export const CHAIN_SELECT_MAINNETS = [
+export const CHAIN_SELECT_MAINNETS: number[] = [
   42793, // Etherlink Mainnet
-] as const;
+];
 
-export const CHAIN_SELECT_TESTNETS = [
+export const CHAIN_SELECT_TESTNETS: number[] = [
   128123, // Etherlink Ghostnet
   127823, // Etherlink Shadownet
-] as const;
+];
 
 export const ORDERED_CHAINS = [...CHAIN_SELECT_MAINNETS, ...CHAIN_SELECT_TESTNETS] as const;
 
