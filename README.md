@@ -8,6 +8,17 @@ Do you ever feel worried about the different apps that have access to the tokens
 
 If you want to learn more about (unlimited) token approvals, I wrote an article on my blog: [Unlimited ERC20 allowances considered harmful](https://kalis.me/unlimited-erc20-allowances/).
 
+## Etherlink Version
+
+An Etherlink-focused version of Revoke.cash is hosted at **[revoke.bubbletez.com](https://revoke.bubbletez.com/)**.
+
+This deployment includes support for:
+- Etherlink Mainnet (Chain ID: 42793)
+- Etherlink Ghostnet Testnet (Chain ID: 128123)
+- Etherlink Shadownet Testnet (Chain ID: 127823)
+
+The UI is streamlined to show only Etherlink networks, with address searches defaulting to Etherlink Mainnet.
+
 ## Running locally
 
 ```
