@@ -21,7 +21,7 @@ export const CHAIN_SELECT_TESTNETS: number[] = [
   127823, // Etherlink Shadownet
 ];
 
-export const ORDERED_CHAINS = [...CHAIN_SELECT_MAINNETS, ...CHAIN_SELECT_TESTNETS] as const;
+export const ORDERED_CHAINS: number[] = [...CHAIN_SELECT_MAINNETS, ...CHAIN_SELECT_TESTNETS];
 
 const MULTICALL = {
   multicall3: {
