@@ -3,11 +3,11 @@
 import AddressSearchBox from 'components/common/AddressSearchBox';
 import Button from 'components/common/Button';
 import { useCsrRouter } from 'lib/i18n/csr-navigation';
+import { useSearchParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import { useCallback, useRef, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { useAccount } from 'wagmi';
-import { useSearchParams } from 'next/navigation';
 
 // Default to Etherlink Mainnet
 const DEFAULT_CHAIN_ID = 42793;
